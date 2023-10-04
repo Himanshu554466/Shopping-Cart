@@ -11,9 +11,9 @@ function App() {
           <h2>Shopping Cart</h2>
           <itemContext.Provider value={{total,setTotal}}>
             <Navbar />
+            <Items />   
             </itemContext.Provider>
 
-            <Items />   
                  </div>
   );
 }
