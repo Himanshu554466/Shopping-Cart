@@ -8,7 +8,7 @@ function ItemCard({ name, price }) {
   const value = useContext(itemContext);
 
   //destructring setTotal and total
-  const {setTotal,total} = value;
+  const {setTotal,total,item,setItem} = value;
 
   const handleAdd = () =>{
     setTotal((total) => {
@@ -16,16 +16,14 @@ function ItemCard({ name, price }) {
       console.log(newTotal);
       return newTotal;
     });
-  
+    setItem(item+1);
   };
 
   const handleRemove = () => {
     if(total>0)
-    setTotal((total) => {
-      const newTotal = total - price;
-      console.log(newTotal);
-      return newTotal;
-    });
+    setTotal( total - price);
+    if(item>0)
+    setItem( item-1);
   };
 
   return (
