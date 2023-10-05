@@ -6,11 +6,19 @@ import { useValue } from "../itemContext";
 
 function Navbar() {
   // const value = useContext(itemContext);
-  const {item,total,cart} = useValue();
+  const {item,total,setItem,setTotal} = useValue();
+
+  //creating reset button
+  const handleReset = ()=>{
+    setItem(0);
+    setTotal(0);
+  }
+
   return (
     <div className={styles.container}>
       <h1>Total : &#x20B9; {total}</h1>
       <h1>Items: {item}</h1>
+      <div className= {styles.buttonWrapper}> <button onClick = {()=>handleReset()} className= {styles.button}>Reset</button></div>
     </div>
   );
 }

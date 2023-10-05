@@ -6,3 +6,19 @@
     color: var(--primary-color);
     padding: 1rem;
 }
+
+.buttonWrapper{
+    margin-block:1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+}
+
+.button{
+    border: 0.15rem solid #000;
+    font-size: 1.2rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 2px 2px 0px 1px;
+}
