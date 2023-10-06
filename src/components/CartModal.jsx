@@ -1,9 +1,11 @@
 import React from "react";
 import styles from "../styles/CartModal.module.css";
 
-function CartModal() {
+// destructring the toggle
+function CartModal({toggle}) {
+
 function close(){
-  
+  toggle();
 }
 
 function clear(){
@@ -23,7 +25,7 @@ function clear(){
       </div>
       <div className={styles.total}>
         <div className={styles.totalText}>Total</div>
-        <div className={styles.totalPrice}>$Price</div>
+        <div className={styles.totalPrice}>&#x20B9; Price</div>
       </div>
     </div>
   );

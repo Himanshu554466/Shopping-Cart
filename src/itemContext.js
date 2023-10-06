@@ -35,7 +35,9 @@ function CustomItemContext({children}){
 
     return(
         <itemContext.Provider value ={{total ,setTotal ,item ,setItem ,handleAdd ,handleRemove,toggle}}>
-          {showCart && <CartModal />}
+          
+          {/* paasing toggle as aprops */}
+          {showCart && <CartModal toggle={toggle} />}
             {children}
         </itemContext.Provider>
     )
