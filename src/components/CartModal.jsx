@@ -4,14 +4,15 @@ import { useValue } from "../itemContext";
 
 // destructring the toggle
 function CartModal({toggle}) {
-  const {cart} = useValue();
+  const {cart,setCart} = useValue();
 
 function close(){
   toggle();
 }
 
 function clear(){
-
+  // cart become empty array after click on clear
+  setCart([]);
 }
 
   return (
