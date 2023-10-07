@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "../styles/CartModal.module.css";
+import { useValue } from "../itemContext";
 
 // destructring the toggle
 function CartModal({toggle}) {
+  const {cart} = useValue();
 
 function close(){
   toggle();
@@ -21,7 +23,15 @@ function clear(){
         Clear
       </div>
       <div className={styles.itemContainer}>
-
+        {cart.map((item) => {
+          return(
+            <div className={styles.cartCard} key={item.id}>
+              <h1>{item.className}</h1>
+              <h2>X {item.qty}</h2>
+              <h3>X {item.qty *item.price} </h3>
+            </div>
+          )
+        })}
       </div>
       <div className={styles.total}>
         <div className={styles.totalText}>Total</div>
